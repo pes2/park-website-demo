@@ -1,0 +1,18 @@
+<%- include("partials/header"); -%>
+
+<h1 class="compose-blog-title">Write a blog post</h1>
+<div class="compose-blog">
+  <form name="composeForm" action="/compose" onsubmit="return validate()" method="post">
+    <div class="publish-form">
+      <label>Title</label>
+      <input type="text" class="publish-input" name="blogTitle" autocomplete="off" />
+      <label>Post</label>
+      <textarea class="publish-input" rows="6" name="blogBody"></textarea>
+    </div>
+    <button type="submit" class="publish-button">Submit</button>
+  </form>
+</div>
+
+<script src="/js/client.js"></script>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%>
+
+<div class="commenting-page">
+
+    <div class="blog-item">
+        <h2 class="blog-title"> <%= title %> </h2>
+        <p class="blog-content"> <%= content %> </p>
+    </div>
+    <div class="add-comment">
+
+        <form name="commentForm" action="/posts/<%= title %>" onsubmit="return validateForm()" method="post">
+            <textarea class="comment-text" rows="5" cols="50" placeholder="Add comment here..."
+                name="comment"></textarea>
+            <button class="submit-comment-btn" type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <div class="blog-comment-section">
+        <h3 class="comment-title">Comments</h3>
+
+        <% comments.forEach(function(comment) { %>
+        <p class="comment">
+            <%= comment %>
+        </p>
+        <% }); %>
+    </div>
+
+</div>
+
+
+<script src="/js/client.js"></script>
+
+
+<%- include("partials/footer"); -%>
