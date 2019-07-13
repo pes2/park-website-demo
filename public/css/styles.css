@@ -455,15 +455,16 @@ button > .fa {
     max-height: 50%;
     min-height: 30%;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
   
     grid-template-areas:
       "one three"
       "four four"
       "five five"
-      "six two";
+      "six two"
+      "seven seven";
   
-    grid-row-gap: 10px;    
+    grid-gap: 10px;    
   }
   
   .grid-item-title {

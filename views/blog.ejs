@@ -1,21 +1,26 @@
 <%- include("partials/header"); -%>
 
 <div class="blog-page">
-    <h1 class="blog-page-title">National Park Blog</h1>
-    <% posts.forEach(function(post) { %>
-    <div class="blog-items">
-        <div class="blog-item">
-            <h2 class="blog-title"> <%= post.title %> </h2>
-            <p class="blog-content">
-                <%= post.content %>
-            </p>
-            <form action="/posts/<%= post.title %>" method="get">
-                <button class="comment-btn" type="submit"><i class="far fa-comment"></i> Comments</button>
-            </form>
-
-        </div>
+  <h1 class="blog-page-title">National Park Blog</h1>
+  <% if (posts.length === 0) { %>
+  <h2 class="blog-item blog-title">
+    Use /compose route to submit your first blog post.
+  </h2>
+  <% } %> <% posts.forEach(function(post) { %>
+  <div class="blog-items">
+    <div class="blog-item">
+      <h2 class="blog-title"><%= post.title %></h2>
+      <p class="blog-content">
+        <%= post.content %>
+      </p>
+      <form action="/posts/<%= post.title %>" method="get">
+        <button class="comment-btn" type="submit">
+          <i class="far fa-comment"></i> Comments
+        </button>
+      </form>
     </div>
-    <% }); %>
+  </div>
+  <% }); %>
 </div>
 
 <%- include("partials/footer"); -%>
